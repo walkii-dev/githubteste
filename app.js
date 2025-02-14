@@ -20,6 +20,28 @@ console.log(anoNascimento);
 if (anoNascimento > 2007) {
     alert('Você ainda é um adolescente!');
 }
+let animal = prompt('qual é o seu animal favorito?');
+if (animal == 'cachorro' || animal == 'gato'){
+    alert('Você ama animais!');
+} else {
+    alert('Animais são incríveis!');
+}
+
+let numero = prompt('insira um número:');
+if (numero > 0){
+    alert('Esse número é positivo.');
+} else { if (numero < 0) {
+    alert('este número é negativo.');
+} else{
+    alert('este número é neutro.');
+}
+
+}
+
+let score = prompt('insert your points:');
+score = score > 50 ? 'Congrats, you win!' : 'Sorry, try again!' ;
+alert(score);*/
+
 
 let saldoDaConta = 182.61;
 alert (`o saldo da sua conta é de R$ ${saldoDaConta}`);
