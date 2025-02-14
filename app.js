@@ -1,83 +1,87 @@
-//let cidade = 'São Paulo';
-
-//let altura = 1.75;
-
-//let numbOfProducts = 30;
-
-//let saldoTotal = 5000;
-
-//alert('Atenção! preencha todos os campos corretamente!');
-
-//let mensagemDeAviso = 'Atenção! Preencha todos os campos direitinho!';
-//alert(mensagemDeAviso);
-
-//let corFavorita = prompt('Qual sua cor favorita?');
-//console.log(corFavorita);
-
-//let anoNascimento  = prompt('em que ano você nasceu?');
-//console.log(anoNascimento);
-
-//if (anoNascimento > 2007) {
-//    alert('Você ainda é um adolescente!');
-//}
-/*
-let animal = prompt('qual é o seu animal favorito?');
-if (animal == 'cachorro' || animal == 'gato'){
-    alert('Você ama animais!');
-} else {
-    alert('Animais são incríveis!');
-}*/
-/*
-let numero = prompt('insira um número:');
-if (numero > 0){
-    alert('Esse número é positivo.');
-
-} else { if (numero < 0) {
-    alert('este número é negativo.');
-} else{
-    alert('este número é neutro.');
+function exibirAlerta(mensagem) {
+    alert(mensagem);
 }
 
-}*/
-/*
-let score = prompt('insert your points:');
-score = score > 50 ? 'Congrats, you win!' : 'Sorry, try again!' ;
-alert(score);*/
-/*
-let saldoDaConta = 182.61;
-alert (`o saldo da sua conta é de R$ ${saldoDaConta}`);
-*/
-/*
-let nome = prompt('Insira seu nome:');
-let sobrenome = prompt('Insira seu sobrenome:');
-alert(`Olá ${nome} ${sobrenome}, tudo certo?`);
-*/
-
-/*let contador = 5;
-while (contador <= 15){
-    console.log(contador);
-    contador++; 
-}*/
-
-/*let contador = 20;
-while(contador >= 10){
-    console.log(contador);
-    contador--;
-}*/
-
-/*let contador = prompt('Insira um número:');
-while(contador >=1 ){
-    console.log(contador);
-    contador-- ;
-}
-let inicio = 1;
-let contador = prompt('insira um número:');
-while(inicio <= contador){
-    console.log(inicio);
-    inicio++;
+function perguntarERetornar(mensagem) {
+    return prompt(mensagem);
 }
 
-console.log('Obrigado pelo seu carinho!');*/
+function verificarAnoNascimento() {
+    let anoNascimento = perguntarERetornar('Em que ano você nasceu?');
+    console.log(anoNascimento);
+    if (anoNascimento > 2007) {
+        exibirAlerta('Você ainda é um adolescente!');
+    }
+}
 
-let cidade = prompt('qual é sua cidade?');
-console.log(`interessante saber que você é de ${cidade}!`)
+function verificarAnimalFavorito() {
+    let animal = perguntarERetornar('Qual é o seu animal favorito?');
+    if (animal === 'cachorro' || animal === 'gato') {
+        exibirAlerta('Você ama animais!');
+    } else {
+        exibirAlerta('Animais são incríveis!');
+    }
+}
+
+function verificarNumero() {
+    let numero = perguntarERetornar('Insira um número:');
+    if (numero > 0) {
+        exibirAlerta('Esse número é positivo.');
+    } else if (numero < 0) {
+        exibirAlerta('Este número é negativo.');
+    } else {
+        exibirAlerta('Este número é neutro.');
+    }
+}
+
+function verificarPontuacao() {
+    let score = perguntarERetornar('Insert your points:');
+    score = score > 50 ? 'Congrats, you win!' : 'Sorry, try again!';
+    exibirAlerta(score);
+}
+
+function exibirSaldo() {
+    let saldoDaConta = 182.61;
+    exibirAlerta(`O saldo da sua conta é de R$ ${saldoDaConta}`);
+}
+
+function perguntarNomeCompleto() {
+    let nome = perguntarERetornar('Insira seu nome:');
+    let sobrenome = perguntarERetornar('Insira seu sobrenome:');
+    exibirAlerta(`Olá ${nome} ${sobrenome}, tudo certo?`);
+}
+
+function contarCrescente(limite) {
+    let contador = 1;
+    while (contador <= limite) {
+        console.log(contador);
+        contador++;
+    }
+}
+
+function contarDecrescente(inicio) {
+    while (inicio >= 1) {
+        console.log(inicio);
+        inicio--;
+    }
+}
+
+function executar() {
+    exibirAlerta('Atenção! Preencha todos os campos corretamente!');
+    exibirAlerta('Atenção! Preencha todos os campos direitinho!');
+    console.log(perguntarERetornar('Qual sua cor favorita?'));
+    verificarAnoNascimento();
+    verificarAnimalFavorito();
+    verificarNumero();
+    verificarPontuacao();
+    exibirSaldo();
+    perguntarNomeCompleto();
+    contarCrescente(15);
+    contarDecrescente(20);
+    contarDecrescente(perguntarERetornar('Insira um número:'));
+    contarCrescente(perguntarERetornar('Insira um número:'));
+    console.log('Obrigado pelo seu carinho!');
+    console.log(`Interessante saber que você é de ${perguntarERetornar('Qual é sua cidade?')}!`);
+}
+
+executar();
